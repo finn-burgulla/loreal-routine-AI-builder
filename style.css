@@ -378,6 +378,19 @@ body {
   outline: none;
 }
 
+/* Button hover effect: gold background, black text */
+button:hover,
+button:focus,
+.generate-btn:hover,
+.toggle-description-btn:hover,
+.remove-selected-btn:hover,
+.rtl-toggle-btn:hover {
+  background: #c7a008;
+  color: #000;
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+}
+
 /* RTL Layout Styles */
 body.rtl,
 .page-wrapper.rtl {
