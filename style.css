@@ -20,14 +20,22 @@ body {
 
 /* header */
 .site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 10px;
 }
 
 .logo {
-  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 15px;
+  width: 250px;
+  max-width: 100%;
 }
 
 .site-title {
@@ -54,6 +62,22 @@ body {
 }
 
 .search-section select:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.search-section input#productSearch {
+  padding: 16px;
+  font-size: 18px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background-color: white;
+  font-weight: 500;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.search-section input#productSearch:focus {
   outline: none;
   border-color: #666;
 }
@@ -133,6 +157,50 @@ body {
 .chat-form button:focus {
   outline: 2px solid #000;
   outline-offset: 2px;
+}
+
+/* Highlight selected product card */
+.product-card.selected {
+  border: 2px solid #007bff;
+  background: #eaf4ff;
+}
+
+/* Selected products list styling */
+#selectedProductsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Selected product item */
+.selected-product-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+/* Remove button for selected products */
+.remove-selected-btn {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.remove-selected-btn:hover {
+  background: #d11a1a;
 }
 
 /* visually hidden */
@@ -252,4 +320,96 @@ body {
 
 .generate-btn i {
   margin-right: 8px;
+}
+
+/* Collapsible product description */
+.product-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #f9f9f9;
+  color: #333;
+  font-size: 15px;
+  margin-top: 8px;
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+/* When expanded, show the description */
+.product-description.expanded {
+  max-height: 300px; /* enough for most descriptions */
+  padding: 12px 8px;
+}
+
+/* Toggle button for description */
+.toggle-description-btn {
+  margin-top: 8px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toggle-description-btn:hover,
+.toggle-description-btn:focus {
+  background: #0056b3;
+  outline: none;
+}
+
+/* RTL Toggle Button */
+.rtl-toggle-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.2s;
+}
+.rtl-toggle-btn:hover,
+.rtl-toggle-btn:focus {
+  background: #0056b3;
+  outline: none;
+}
+
+/* RTL Layout Styles */
+body.rtl,
+.page-wrapper.rtl {
+  direction: rtl;
+}
+
+body.rtl .products-grid,
+.page-wrapper.rtl .products-grid {
+  flex-direction: row-reverse;
+}
+
+body.rtl .selected-products,
+.page-wrapper.rtl .selected-products {
+  text-align: right;
+}
+
+body.rtl .selected-product-item,
+.page-wrapper.rtl .selected-product-item {
+  flex-direction: row-reverse;
+}
+
+body.rtl .chatbox,
+.page-wrapper.rtl .chatbox {
+  text-align: right;
+}
+
+body.rtl .chat-form,
+.page-wrapper.rtl .chat-form {
+  flex-direction: row-reverse;
+}
+
+body.rtl .site-header,
+.page-wrapper.rtl .site-header {
+  text-align: right;
 }

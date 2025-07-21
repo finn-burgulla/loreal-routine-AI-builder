@@ -17,11 +17,28 @@
 
   <body>
     <div class="page-wrapper">
+      <!-- RTL Toggle Button (above header, right aligned) -->
+      <div style="display: flex; justify-content: flex-end; margin-top: 20px">
+        <button id="rtlToggle" class="rtl-toggle-btn" type="button">
+          Enable RTL Layout
+        </button>
+      </div>
       <!------- Header / Branding ------->
       <header class="site-header">
         <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="logo" />
         <h1 class="site-title">Smart Routine &amp; Product Advisor</h1>
       </header>
+
+      <!-- Product Search -->
+      <div class="search-section" style="margin-bottom: 12px">
+        <input
+          id="productSearch"
+          type="text"
+          placeholder="Search products…"
+          autocomplete="off"
+          style="width: 100%"
+        />
+      </div>
 
       <!-- Category Filter -->
       <div class="search-section">
